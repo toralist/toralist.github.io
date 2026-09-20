@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>雷电将军被C出液体 - 深度解析与同人艺术鉴赏指南</title>
+    <meta name="description" content="本站提供关于雷电将军角色同人创作（R-18向）的深度解析、艺术鉴赏指南及社区讨论。包含创作背景、角色形象分析及相关艺术作品的合规展示与讨论。">
+    <meta name="keywords" content="雷电将军被C出液体, 原神雷电将军, 雷电将军同人, 原神同人图, 角色艺术鉴赏, 二次元插画">
+    <style>
+        :root {
+            --primary-color: #2b2b2b;
+            --accent-color: #a5d8ff;
+            --bg-color: #f4f4f4;
+            --card-bg: #ffffff;
+            --text-main: #1a1a1a;
+            --text-secondary: #666666;
+            --border-radius: 8px;
+            --spacing-unit: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 60px;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav a {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            transition: color 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 var(--spacing-unit);
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 24px;
+        }
+
+        /* Hero Section */
+        .hero {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            color: white;
+            padding: 40px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+            margin-bottom: 12px;
+        }
+
+        .hero p {
+            color: #cbd5e1;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Content Cards */
+        .section-title {
+            font-size: 1.25rem;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--accent-color);
+            display: inline-block;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin-bottom: 24px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 8px;
+            background: #e2e8f0;
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            border-radius: 4px;
+            margin-right: 6px;
+            margin-bottom: 6px;
+        }
+
+        /* Art Grid */
+        .art-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .art-item {
+            background: #f8fafc;
+            border-radius: 6px;
+            overflow: hidden;
+            position: relative;
+            aspect-ratio: 3/4;
+        }
+
+        .art-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .art-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .art-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 8px;
+            font-size: 0.85rem;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .art-item:hover .art-overlay {
+            opacity: 1;
+        }
+
+        /* Sidebar */
+        aside .widget {
+            margin-bottom: 24px;
+        }
+
+        .list-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            font-size: 0.9rem;
+        }
+
+        .list-item:last-child {
+            border-bottom: none;
+        }
+
+        .list-item span.tag {
+            font-size: 0.75rem;
+            padding: 2px 6px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-color);
+            color: #888;
+            padding: 40px 0;
+            margin-top: 40px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="nav-container">
+        <div class="logo">原神同人鉴赏</div>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">首页</a></li>
+                <li><a href="#">分类浏览</a></li>
+                <li><a href="#">作者专区</a></li>
+                <li><a href="#">社区讨论</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main class="container">
+    <section class="hero">
+        <h1>雷电将军同人艺术鉴赏</h1>
+        <p>探索《原神》角色雷电将军（巴尔泽布）在同人创作中的多元形象，深度解析相关艺术作品中的表现手法与角色情感演绎。</p>
+    </section>
+
+    <section class="content-area">
+        <h2 class="section-title">深度解析</h2>
+        <article class="card">
+            <h3>角色形象与同人创作背景</h3>
+            <p>雷电将军作为稻妻的统治者，其形象通常与“永恒”、“威严”和“孤独”紧密相连。在同人创作领域，创作者们往往打破其高冷的表面，探索角色内心深处的柔软与渴望。这类作品通常聚焦于角色在特定情境下的情感流露，通过细腻的笔触展现角色性格的反差魅力。</p>
+            <br>
+            <p>在涉及此类特定主题的同人艺术中，重点往往在于氛围的营造与情绪的推演。创作者会利用光影对比、色彩饱和度等视觉元素，来增强画面的感染力，从而引导观者进入角色的情感世界。</p>
+        </article>
+
+        <h2 class="section-title">精选作品集</h2>
+        <div class="art-grid">
+            <div class="art-item">
+                <img src="https://picsum.photos/seed/raiden1/300/400" alt="雷电将军同人图1">
+                <div class="art-overlay">场景：稻妻城夜景</div>
+            </div>
+            <div class="art-item">
+                <img src="https://picsum.photos/seed/raiden2/300/400" alt="雷电将军同人图2">
+                <div class="art-overlay">风格：唯美写实</div>
+            </div>
+            <div class="art-item">
+                <img src="https://picsum.photos/seed/raiden3/300/400" alt="雷电将军同人图3">
+                <div class="art-overlay">场景：日常互动</div>
+            </div>
+            <div class="art-item">
+                <img src="https://picsum.photos/seed/raiden4/300/400" alt="雷电将军同人图4">
+                <div class="art-overlay">风格：暗黑哥特</div>
+            </div>
+            <div class="art-item">
+                <img src="https://picsum.photos/seed/raiden5/300/400" alt="雷电将军同人图5">
+                <div class="art-overlay">场景：情感特写</div>
+            </div>
+            <div class="art-item">
+                <img src="https://picsum.photos/seed/raiden6/300/400" alt="雷电将军同人图6">
+                <div class="art-overlay">风格：二次元赛璐璐</div>
+            </div>
+        </div>
+
+        <article class="card" style="margin-top: 24px;">
+            <h3>创作建议与注意事项</h3>
+            <p>在进行相关主题的二次创作时，建议遵守相关法律法规及社区规范。尊重角色的原创设定，避免过度低俗化的描写，注重艺术性与情感表达。同时，请确保所使用的素材（如角色立绘）具有合法授权，或属于公有领域，以免侵犯版权。</p>
+        </article>
+    </section>
+
+    <aside>
+        <div class="widget card">
+            <h3>热门标签</h3>
+            <div>
+                <span class="tag">雷电将军</span>
+                <span class="tag">巴尔泽布</span>
+                <span class="tag">稻妻</span>
+                <span class="tag">同人本</span>
+                <span class="tag">插画</span>
+                <span class="tag">角色COS</span>
+            </div>
+        </div>
+
+        <div class="widget card">
+            <h3>最新动态</h3>
+            <div class="list-item">
+                <span>雷电将军皮肤新图泄露</span>
+                <span class="tag">资讯</span>
+            </div>
+            <div class="list-item">
+                <span>同人画师2023年度作品集</span>
+                <span class="tag">作品</span>
+            </div>
+            <div class="list-item">
+                <span>稻妻剧情深度解析</span>
+                <span class="tag">攻略</span>
+            </div>
+            <div class="list-item">
+                <span>社区投票：你最喜欢的将军形象</span>
+                <span class="tag">活动</span>
+            </div>
+        </div>
+
+        <div class="widget card">
+            <h3>关于本站</h3>
+            <p style="font-size: 0.9rem; color: #666;">本站致力于收录和展示高质量的二次元同人艺术作品，为创作者和爱好者提供一个纯净的交流展示平台。</p>
+        </div>
+    </aside>
+</main>
+
+<footer>
+    <div class="container" style="padding: 0;">
+        <p>&copy; 2023 原神同人鉴赏站. All rights reserved.</p>
+        <p style="margin-top: 8px; font-size: 0.8rem;">本站内容仅供交流与鉴赏，与米哈游官方无关。请遵守当地法律法规。</p>
+    </div>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</body>
+</html>
