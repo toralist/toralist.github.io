@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="挠组词和拼音查询平台，提供挠字的读音、笔画、释义及常用词语搭配，如挠痒、挠头、挠破头皮等，帮助用户快速掌握该字的用法。">
+    <meta name="keywords" content="挠组词和拼音,挠字组词,挠的拼音,挠的意思">
+    <title>挠组词和拼音 - 汉字词语搭配与释义查询</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-color: #e0e0e0;
+            --spacing-unit: 1rem;
+            --container-width: 1000px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* 头部导航 */
+        header {
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 60px;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            background: var(--primary-color);
+            color: #fff;
+            padding: 0.1rem 0.4rem;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-color);
+        }
+
+        /* 首屏区域 */
+        .hero {
+            padding: 3rem 0;
+            text-align: center;
+            background: linear-gradient(180deg, #ffffff 0%, #f0f4f8 100%);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        /* 拼音卡片 */
+        .pinyin-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border: 1px solid var(--border-color);
+        }
+
+        .pinyin-display {
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            letter-spacing: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .pinyin-sub {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .character-meaning {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .character-meaning h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .definition {
+            font-size: 1rem;
+            color: var(--text-main);
+        }
+
+        /* 词语列表区域 */
+        .content-section {
+            padding: 3rem 0;
+        }
+
+        .section-header {
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 1rem;
+        }
+
+        .section-header h2 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-top: 0.25rem;
+        }
+
+        .word-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .word-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .word-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+            border-color: var(--accent-color);
+        }
+
+        .word-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.5rem;
+        }
+
+        .word-name {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .word-pinyin {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            background: #f0f4f8;
+            padding: 0.1rem 0.4rem;
+            border-radius: 4px;
+        }
+
+        .word-usage {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .word-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            background: #eef2f7;
+            color: var(--accent-color);
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+        }
+
+        /* 常见问题 */
+        .faq-section {
+            background-color: #eef2f7;
+            padding: 3rem 0;
+            margin-top: 2rem;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .faq-item {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .faq-answer {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 1rem;
+        }
+
+        .footer-links a {
+            color: #bdc3c7;
+            text-decoration: none;
+            margin: 0 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            color: #fff;
+        }
+
+        .copyright {
+            font-size: 0.85rem;
+            color: #7f8c8d;
+        }
+
+        /* 响应式适配 */
+        @media (max-width: 768px) {
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 1rem 0;
+                gap: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .pinyin-display {
+                font-size: 3rem;
+            }
+
+            .word-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo"><span>词</span>汉语字典</a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">拼音查询</a></li>
+                    <li><a href="#">组词大全</a></li>
+                    <li><a href="#">近义词</a></li>
+                    <li><a href="#">反义词</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>挠组词和拼音</h1>
+                <p>为您提供“挠”字的读音、笔画数、释义及常用词语搭配，助您快速掌握汉字用法。</p>
+                
+                <div class="pinyin-card">
+                    <div class="pinyin-display">náo</div>
+                    <div class="pinyin-sub">nao2</div>
+                    <div class="character-meaning">
+                        <h3>字义解释</h3>
+                        <p class="definition">1. 轻轻抓，使发痒：挠痒痒。<br>2. 搔动：挠头。<br>3. 烦扰，惹：挠乱。<br>4. 抓住不放，纠缠：死死挠住不放。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>常用挠字词语</h2>
+                    <p>以下整理了日常生活中最常使用的包含“挠”字的词语及成语</p>
+                </div>
+
+                <div class="word-grid">
+                    <!-- 词语 1 -->
+                    <article class="word-card">
+                        <div class="word-header">
+                            <span class="word-name">挠痒痒</span>
+                            <span class="word-pinyin">náo yǎng yǎng</span>
+                        </div>
+                        <p class="word-usage">用手轻轻抓或用器具摩擦，使身体产生舒适感。</p>
+                        <div class="word-tags">
+                            <span class="tag">动词</span>
+                            <span class="tag">口语</span>
+                        </div>
+                    </article>
+
+                    <!-- 词语 2 -->
+                    <article class="word-card">
+                        <div class="word-header">
+                            <span class="word-name">挠头</span>
+                            <span class="word-pinyin">náo tóu</span>
+                        </div>
+                        <p class="word-usage">形容因发愁、为难而抓头。也指因为不知如何是好而感到困扰。</p>
+                        <div class="word-tags">
+                            <span class="tag">动词</span>
+                            <span class="tag">成语</span>
+                        </div>
+                    </article>
+
+                    <!-- 词语 3 -->
+                    <article class="word-card">
+                        <div class="word-header">
+                            <span class="word-name">挠破头皮</span>
+                            <span class="word-pinyin">náo pò tóu pí</span>
+                        </div>
+                        <p class="word-usage">形容费尽心思，绞尽脑汁也想不出办法来。</p>
+                        <div class="word-tags">
+                            <span class="tag">成语</span>
+                            <span class="tag">俗语</span>
+                        </div>
+                    </article>
+
+                    <!-- 词语 4 -->
+                    <article class="word-card">
+                        <div class="word-header">
+                            <span class="word-name">死死挠住</span>
+                            <span class="word-pinyin">sǐ sǐ náo zhù</span>
+                        </div>
+                        <p class="word-usage">紧紧抓住不放，形容纠缠或固执的态度。</p>
+                        <div class="word-tags">
+                            <span class="tag">动词</span>
+                            <span class="tag">口语</span>
+                        </div>
+                    </article>
+
+                    <!-- 词语 5 -->
+                    <article class="word-card">
+                        <div class="word-header">
+                            <span class="word-name">挠乱</span>
+                            <span class="word-pinyin">náo luàn</span>
+                        </div>
+                        <p class="word-usage">扰乱，使混乱。</p>
+                        <div class="word-tags">
+                            <span class="tag">动词</span>
+                            <span class="tag">书面语</span>
+                        </div>
+                    </article>
+
+                    <!-- 词语 6 -->
+                    <article class="word-card">
+                        <div class="word-header">
+                            <span class="word-name">百抓挠心</span>
+                            <span class="word-pinyin">bǎi zhuā náo xīn</span>
+                        </div>
+                        <p class="word-usage">形容焦急、烦躁，像心里有虫子在抓一样。</p>
+                        <div class="word-tags">
+                            <span class="tag">成语</span>
+                            <span class="tag">形容词</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>常见问题</h2>
+                    <p>关于“挠”字用法与读音的疑问解答</p>
+                </div>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <div class="faq-question">挠的读音是什么？</div>
+                        <div class="faq-answer">“挠”字的读音是 <strong>náo</strong>，声调是第二声（阳平）。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">“挠痒痒”是什么意思？</div>
+                        <div class="faq-answer">指用手轻轻抓或用器具摩擦皮肤，使身体产生舒适感。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">挠头通常表示什么情绪？</div>
+                        <div class="faq-answer">挠头通常表示困惑、发愁、为难，或者是在思考如何解决问题。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">挠和搔有什么区别？</div>
+                        <div class="faq-answer">在现代汉语中，“挠”和“搔”意思相近，都指抓或抓痒。但“搔”多用于书面语或特定语境（如搔首弄姿），“挠”更口语化且用途更广。</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-links">
+                <a href="#">关于我们</a>
+                <a href="#">免责声明</a>
+                <a href="#">使用帮助</a>
+                <a href="#">联系合作</a>
+            </div>
+            <p class="copyright">Copyright © 2023 汉字词语查询平台 | 仅供学习参考</p>
+        </div>
+    </footer>
+
+</body>
+</html>
