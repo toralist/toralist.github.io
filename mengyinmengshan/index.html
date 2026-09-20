@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="蒙阴蒙山旅游指南 - 提供蒙山国家森林公园、龟蒙顶、云蒙湖等核心景点的详细介绍、旅游攻略、最佳游览路线及住宿美食推荐。">
+    <meta name="keywords" content="蒙阴蒙山, 蒙山旅游, 龟蒙顶, 云蒙湖, 沂蒙山旅游攻略, 山东旅游">
+    <title>蒙阴蒙山-山东蒙山国家森林公园旅游攻略与景区指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-green: #2E7D32;
+            --secondary-green: #4CAF50;
+            --accent-gold: #FFC107;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --bg-light: #F9FAFB;
+            --white: #FFFFFF;
+            --border-radius: 8px;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-dark);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-dark);
+            transition: var(--transition);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-green);
+        }
+
+        .cta-button {
+            background-color: var(--primary-green);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .cta-button:hover {
+            background-color: var(--secondary-green);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 600px;
+            background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://picsum.photos/seed/mengshan_hero/1920/1080');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .btn-outline {
+            border: 2px solid var(--white);
+            color: var(--white);
+            padding: 10px 25px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--white);
+            color: var(--primary-green);
+        }
+
+        /* Quick Info Bar */
+        .info-bar {
+            background-color: var(--primary-green);
+            color: var(--white);
+            padding: 15px 0;
+            margin-top: -30px;
+            position: relative;
+            z-index: 10;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            text-align: center;
+        }
+
+        .info-item strong {
+            display: block;
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 60px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2.2rem;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent-gold);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-green);
+        }
+
+        .feature-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        /* Scenic Spots */
+        .scenic-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .scenic-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .scenic-card:hover {
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .scenic-img {
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .scenic-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .scenic-card:hover .scenic-img img {
+            transform: scale(1.05);
+        }
+
+        .scenic-info {
+            padding: 25px;
+        }
+
+        .scenic-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--primary-green);
+        }
+
+        .scenic-tag {
+            display: inline-block;
+            background-color: #E8F5E9;
+            color: var(--primary-green);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-bottom: 15px;
+        }
+
+        .scenic-desc {
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        .scenic-link {
+            color: var(--primary-green);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Travel Guide */
+        .guide-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        .guide-list {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+        }
+
+        .guide-step {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .guide-step:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-green);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .step-content h4 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+
+        .step-content p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .tips-sidebar {
+            background-color: var(--primary-green);
+            color: var(--white);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            height: fit-content;
+        }
+
+        .tips-sidebar h3 {
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            padding-bottom: 10px;
+        }
+
+        .tips-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .tips-list li::before {
+            content: '•';
+            color: var(--accent-gold);
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: #ccc;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+            }
+
+            nav ul {
+                margin-top: 15px;
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .scenic-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .guide-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3a5 5 0 0 1 10 0c0 2.5 2 4.5 2 4.5S18 9 18 11.5a5 5 0 0 1-10 0c0-2.5 2-4.5 2-4.5S8 5.5 8 3z"/><path d="M8 8c0 2.5 2 4.5 2 4.5S8 15 8 17.5a5 5 0 0 0 10 0c0-2.5-2-4.5-2-4.5s2-2 2-4.5"/></svg>
+                <span>蒙阴蒙山</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#home" class="active">首页</a></li>
+                    <li><a href="#scenery">核心景区</a></li>
+                    <li><a href="#guide">旅游攻略</a></li>
+                    <li><a href="#tips">注意事项</a></li>
+                </ul>
+            </nav>
+            <a href="#guide" class="cta-button">开始规划</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container hero-content">
+                <h1>探索蒙阴蒙山</h1>
+                <p>中国第五大名山，山东第一高山。登临龟蒙顶，赏云海奇观，享天然氧吧，开启您的沂蒙山之旅。</p>
+                <div class="hero-buttons">
+                    <a href="#scenery" class="cta-button">查看景点</a>
+                    <a href="#guide" class="btn-outline">阅读攻略</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Info Bar -->
+        <div class="container">
+            <div class="info-bar">
+                <div class="info-grid">
+                    <div class="info-item">
+                        <strong>115.6km²</strong>
+                        <span>景区总面积</span>
+                    </div>
+                    <div class="info-item">
+                        <strong>1100m</strong>
+                        <span>龟蒙顶海拔</span>
+                    </div>
+                    <div class="info-item">
+                        <strong>99.9%</strong>
+                        <span>森林覆盖率</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <section id="features">
+            <div class="container">
+                <div class="section-header">
+                    <h2>蒙山特色</h2>
+                    <p>为什么选择蒙阴蒙山作为您的度假目的地</p>
+                </div>
+                <div class="features-grid">
+                    <article class="feature-card">
+                        <div class="feature-icon">⛰️</div>
+                        <h3>巍峨泰山</h3>
+                        <p>龟蒙顶为山东第二高峰，气势磅礴，是登高望远、祈福纳祥的绝佳去处。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">🍃</div>
+                        <h3>天然氧吧</h3>
+                        <p>森林茂密，空气清新，富含负氧离子，是名副其实的“天然大氧仓”。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">🦌</div>
+                        <h3>生态乐园</h3>
+                        <p>拥有华北地区最大的野生泰山松，栖息着多种野生动物，体验自然野趣。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">🚣</div>
+                        <h3>云蒙湖</h3>
+                        <p>碧波万顷，风光旖旎，提供游船、垂钓等水上休闲活动，动静皆宜。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Scenic Spots Section -->
+        <section id="scenery" style="background-color: #fff;">
+            <div class="container">
+                <div class="section-header">
+                    <h2>核心景区</h2>
+                    <p>深度游览蒙山必去的精华景点</p>
+                </div>
+                <div class="scenic-grid">
+                    <article class="scenic-card">
+                        <div class="scenic-img">
+                            <img src="https://picsum.photos/seed/turtle/600/400" alt="龟蒙顶">
+                        </div>
+                        <div class="scenic-info">
+                            <span class="scenic-tag">最高峰</span>
+                            <h3>龟蒙顶</h3>
+                            <p class="scenic-desc">位于蒙山主峰，因状如巨龟伏卧而得名。登顶可俯瞰沂蒙大地，云海日出蔚为壮观。</p>
+                            <a href="#" class="scenic-link">查看详情 &rarr;</a>
+                        </div>
+                    </article>
+                    <article class="scenic-card">
+                        <div class="scenic-img">
+                            <img src="https://picsum.photos/seed/mist/600/400" alt="云蒙景区">
+                        </div>
+                        <div class="scenic-info">
+                            <span class="scenic-tag">奇峰怪石</span>
+                            <h3>云蒙景区</h3>
+                            <p class="scenic-desc">以奇松、怪石、秀水、深谷著称，瀑布飞流直下，是徒步爱好者的天堂。</p>
+                            <a href="#" class="scenic-link">查看详情 &rarr;</a>
+                        </div>
+                    </article>
+                    <article class="scenic-card">
+                        <div class="scenic-img">
+                            <img src="https://picsum.photos/seed/lake/600/400" alt="云蒙湖">
+                        </div>
+                        <div class="scenic-info">
+                            <span class="scenic-tag">水上乐园</span>
+                            <h3>云蒙湖</h3>
+                            <p class="scenic-desc">沂蒙山区最大的人工湖，水质清澈，两岸青山倒映，景色如画。</p>
+                            <a href="#" class="scenic-link">查看详情 &rarr;</a>
+                        </div>
+                    </article>
+                    <article class="scenic-card">
+                        <div class="scenic-img">
+                            <img src="https://picsum.photos/seed/forest/600/400" alt="万亩松林">
+                        </div>
+                        <div class="scenic-info">
+                            <span class="scenic-tag">森林浴场</span>
+                            <h3>万亩松林</h3>
+                            <p class="scenic-desc">华北地区最大的野生泰山松林带，漫步林间，清心洗肺，远离尘嚣。</p>
+                            <a href="#" class="scenic-link">查看详情 &rarr;</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Travel Guide Section -->
+        <section id="guide">
+            <div class="container">
+                <div class="section-header">
+                    <h2>旅游攻略</h2>
+                    <p>从行程规划到交通住宿的实用指南</p>
+                </div>
+                <div class="guide-layout">
+                    <div class="guide-list">
+                        <div class="guide-step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>选择最佳季节</h4>
+                                <p>春季（4-5月）山花烂漫，夏季（6-8月）避暑纳凉，秋季（9-10月）层林尽染，冬季（12-2月）雪景银装素裹。推荐春秋两季前往。</p>
+                            </div>
+                        </div>
+                        <div class="guide-step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>规划游览路线</h4>
+                                <p>体力充沛者可从东门进，攀登龟蒙顶，游览万寿谷、玉皇顶；家庭出游可选择乘坐索道上下，重点游览云蒙景区。</p>
+                            </div>
+                        </div>
+                        <div class="guide-step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>住宿与美食</h4>
+                                <p>蒙阴县城及景区周边有众多酒店民宿。推荐品尝蒙阴光棍鸡、全羊汤、野菜包子等当地特色美食。</p>
+                            </div>
+                        </div>
+                        <div class="guide-step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h4>交通指南</h4>
+                                <p>自驾：导航至“蒙山龟蒙顶”或“蒙山云蒙景区”，景区周边停车方便。公共交通：可乘坐临沂至蒙阴的班车，转乘当地旅游专线。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <aside class="tips-sidebar">
+                        <h3>出行贴士</h3>
+                        <ul class="tips-list">
+                            <li>登山建议穿着舒适的运动鞋。</li>
+                            <li>山区昼夜温差大，请随身携带外套。</li>
+                            <li>景区内严禁烟火，注意森林防火。</li>
+                            <li>建议携带防晒霜、雨具及常用药品。</li>
+                            <li>部分路段陡峭，请照看好老人和小孩。</li>
+                        </ul>
+                    </aside>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于蒙阴蒙山</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.8;">
+                        蒙阴蒙山是国家5A级旅游景区，是山东省重要的旅游度假胜地。我们致力于为游客提供最准确、最全面的旅游信息与服务。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#home">回到首页</a></li>
+                        <li><a href="#scenery">景点介绍</a></li>
+                        <li><a href="#guide">自驾游攻略</a></li>
+                        <li><a href="#">票务预订</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li>地址：山东省临沂市蒙阴县</li>
+                        <li>电话：0539-XXXXXXX</li>
+                        <li>邮箱：info@mengshan.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 蒙阴蒙山旅游服务平台. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
