@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>东搜西罗-全网知识聚合与实用工具导航平台</title>
+    <meta name="description" content="东搜西罗致力于为您提供全网最实用的工具、软件、教程与资源聚合服务。无论是学习资料、生活助手还是行业资讯，这里都是您一站式搜索与探索的最佳起点。">
+    <meta name="keywords" content="东搜西罗,工具导航,资源聚合,实用软件,在线教程,知识库">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-hover: #1d4ed8;
+            --secondary-color: #64748b;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-sub: #475569;
+            --border-color: #e2e8f0;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+            --radius: 8px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 24px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-sub);
+            font-weight: 500;
+            transition: color 0.2s;
+            font-size: 0.95rem;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .search-btn {
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            .search-btn {
+                display: block;
+            }
+        }
+
+        /* Main Content */
+        main {
+            flex: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            margin-bottom: 60px;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%);
+            border-radius: var(--radius);
+            border: 1px solid var(--border-color);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            color: var(--text-main);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-sub);
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+
+        .search-box {
+            position: relative;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 16px 24px;
+            padding-right: 50px;
+            font-size: 1rem;
+            border: 2px solid var(--border-color);
+            border-radius: 50px;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .search-box input:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+        }
+
+        .search-box button {
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.2s;
+        }
+
+        .search-box button:hover {
+            background-color: var(--primary-hover);
+        }
+
+        /* Categories Grid */
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 24px;
+            padding-left: 12px;
+            border-left: 4px solid var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .section-title a {
+            font-size: 0.9rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 24px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            font-size: 1.5rem;
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: var(--text-sub);
+            margin-bottom: 20px;
+            flex: 1;
+        }
+
+        .card-link {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .card-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Feature List */
+        .features-section {
+            background-color: var(--card-bg);
+            padding: 40px;
+            border-radius: var(--radius);
+            border: 1px solid var(--border-color);
+            margin-bottom: 60px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        @media (min-width: 768px) {
+            .features-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 16px;
+        }
+
+        .feature-icon {
+            flex-shrink: 0;
+            width: 40px;
+            height: 40px;
+            background-color: #f0fdf4;
+            color: #16a34a;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .feature-content h4 {
+            font-size: 1.1rem;
+            margin-bottom: 4px;
+        }
+
+        .feature-content p {
+            font-size: 0.9rem;
+            color: var(--text-sub);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+
+        details {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            margin-bottom: 12px;
+            overflow: hidden;
+        }
+
+        summary {
+            padding: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            list-style: none;
+            position: relative;
+            padding-right: 40px;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: '+';
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            font-weight: 400;
+        }
+
+        details[open] summary::after {
+            content: '-';
+        }
+
+        details[open] summary {
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .faq-content {
+            padding: 20px;
+            color: var(--text-sub);
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1e293b;
+            color: #94a3b8;
+            padding: 40px 20px;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        @media (min-width: 768px) {
+            .footer-content {
+                grid-template-columns: 2fr 1fr 1fr;
+            }
+        }
+
+        .footer-brand h2 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+        }
+
+        .footer-links h4 {
+            color: white;
+            margin-bottom: 16px;
+            font-size: 1rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 8px;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #334155;
+            font-size: 0.85rem;
+        }
+
+        /* Utility */
+        .tag {
+            display: inline-block;
+            padding: 4px 8px;
+            background-color: #f1f5f9;
+            color: var(--text-sub);
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-right: 6px;
+            margin-bottom: 8px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    <line x1="11" y1="8" x2="11" y2="14"></line>
+                    <line x1="8" y1="11" x2="14" y2="11"></line>
+                </svg>
+                <span>东搜西罗</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#tools">实用工具</a></li>
+                    <li><a href="#resources">学习资源</a></li>
+                    <li><a href="#guide">使用指南</a></li>
+                </ul>
+            </nav>
+            <button class="search-btn" aria-label="搜索">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>全网知识聚合与实用工具导航</h1>
+            <p>东搜西罗为您提供一站式互联网资源导航。无论您需要寻找专业软件、学习资料还是生活助手，我们助您高效检索，精准直达。</p>
+            <div class="search-box">
+                <input type="text" placeholder="搜索工具、软件或资源..." aria-label="搜索">
+                <button type="button" aria-label="提交搜索">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </button>
+            </div>
+        </section>
+
+        <section id="tools" class="grid-container">
+            <div class="section-title">
+                <span>热门工具导航</span>
+                <a href="#">查看全部 &rarr;</a>
+            </div>
+            
+            <article class="card">
+                <div class="card-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                </div>
+                <h3>文档与办公</h3>
+                <p>在线文档协作、PDF转换、PPT设计及各类办公效率工具推荐，助您轻松应对各类文档处理需求。</p>
+                <div>
+                    <span class="tag">协作</span><span class="tag">转换</span><span class="tag">设计</span>
+                </div>
+                <a href="#" class="card-link">立即探索 &rarr;</a>
+            </article>
+
+            <article class="card">
+                <div class="card-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                </div>
+                <h3>图像与视频</h3>
+                <p>图片编辑、AI绘图、视频剪辑及格式处理工具，为创作者和设计师提供强大的视觉支持。</p>
+                <div>
+                    <span class="tag">AI绘画</span><span class="tag">剪辑</span><span class="tag">修图</span>
+                </div>
+                <a href="#" class="card-link">立即探索 &rarr;</a>
+            </article>
+
+            <article class="card">
+                <div class="card-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+                </div>
+                <h3>开发与编程</h3>
+                <p>程序员必备的API接口文档、代码片段管理、在线调试工具及开发者社区资源。</p>
+                <div>
+                    <span class="tag">API</span><span class="tag">IDE</span><span class="tag">文档</span>
+                </div>
+                <a href="#" class="card-link">立即探索 &rarr;</a>
+            </article>
+
+            <article class="card">
+                <div class="card-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                </div>
+                <h3>效率与生活</h3>
+                <p>日程管理、笔记记录、跨平台同步及各类生活小工具，提升您日常生活的效率。</p>
+                <div>
+                    <span class="tag">笔记</span><span class="tag">日程</span><span class="tag">同步</span>
+                </div>
+                <a href="#" class="card-link">立即探索 &rarr;</a>
+            </article>
+        </section>
+
+        <section id="resources" class="grid-container">
+            <div class="section-title">
+                <span>精选学习资源</span>
+                <a href="#">查看全部 &rarr;</a>
+            </div>
+
+            <article class="card">
+                <div class="card-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                </div>
+                <h3>技术文档库</h3>
+                <p>汇集各类前沿技术手册、开源项目文档及编程语言教程，是技术学习者的资料宝库。</p>
+                <a href="#" class="card-link">查看详情 &rarr;</a>
+            </article>
+
+            <article class="card">
+                <div class="card-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                </div>
+                <h3>设计素材库</h3>
+                <p>免费的高清图片、矢量图标、字体素材及配色方案，为设计工作提供源源不断的灵感。</p>
+                <a href="#" class="card-link">查看详情 &rarr;</a>
+            </article>
+
+            <article class="card">
+                <div class="card-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                </div>
+                <h3>行业资讯</h3>
+                <p>科技动态、行业趋势分析及产品评测，帮助您快速把握互联网发展的最新脉搏。</p>
+                <a href="#" class="card-link">查看详情 &rarr;</a>
+            </article>
+        </section>
+
+        <section class="features-section">
+            <div class="section-title">
+                <span>为什么选择东搜西罗</span>
+            </div>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    </div>
+                    <div class="feature-content">
+                        <h4>严格筛选</h4>
+                        <p>所有收录工具均经过人工审核与实测，确保链接有效、安全无毒。</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    </div>
+                    <div class="feature-content">
+                        <h4>实时更新</h4>
+                        <p>持续跟踪互联网工具的迭代与更新，及时维护失效链接，保证信息的时效性。</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    </div>
+                    <div class="feature-content">
+                        <h4>多端同步</h4>
+                        <p>无论您使用手机还是电脑，都能随时随地访问东搜西罗，获取一致的导航体验。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="guide" class="faq-section">
+            <div class="section-title">
+                <span>常见问题</span>
+            </div>
+            
+            <details open>
+                <summary>东搜西罗收录的工具是否免费？</summary>
+                <div class="faq-content">
+                    <p>大部分收录的工具都提供免费的基础版本或免费试用功能，但也包含部分专业软件的付费服务。我们会清晰标注工具的收费模式，方便您根据需求选择。</p>
+                </div>
+            </details>
+
+            <details>
+                <summary>如何提交新发现的优质工具？</summary>
+                <div class="faq-content">
+                    <p>您可以通过页面底部的“联系我们”或发送邮件至我们的官方邮箱。我们的编辑团队会在收到申请后尽快进行审核，通过后将添加到相应的分类中。</p>
+                </div>
+            </details>
+
+            <details>
+                <summary>网站数据来源是否可靠？</summary>
+                <div class="faq-content">
+                    <p>我们的数据主要来源于官方网站公开信息及长期的使用体验积累，确保了信息的真实性和准确性。我们也会定期进行交叉验证，排除虚假广告链接。</p>
+                </div>
+            </details>
+
+            <details>
+                <summary>支持移动端访问吗？</summary>
+                <div class="faq-content">
+                    <p>是的，东搜西罗完全适配移动端浏览器，您可以直接在手机上搜索和访问各类工具，无需下载专门的APP。</p>
+                </div>
+            </details>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h2>东搜西罗</h2>
+                <p>致力于打造最纯粹、最高效的互联网工具导航平台。让搜索更有价值，让工具更有温度。</p>
+            </div>
+            <div class="footer-links">
+                <h4>快速链接</h4>
+                <ul>
+                    <li><a href="#">关于我们</a></li>
+                    <li><a href="#">提交收录</a></li>
+                    <li><a href="#">隐私政策</a></li>
+                    <li><a href="#">免责声明</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>热门分类</h4>
+                <ul>
+                    <li><a href="#">在线工具</a></li>
+                    <li><a href="#">设计素材</a></li>
+                    <li><a href="#">开发文档</a></li>
+                    <li><a href="#">效率软件</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 东搜西罗 All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+  </html>
